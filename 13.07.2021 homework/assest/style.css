@@ -1,0 +1,107 @@
+*,
+::after,
+::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body{
+    background: #000;
+  color: #fff;
+  padding: 0;
+  margin: 0;
+  font-family: 'Slabo 27px', serif;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.container{
+  width: 1000px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border:2px solid red;
+}
+.pacman{
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      /* margin:0 auto; */
+      background: #F2D648;
+      position: relative;
+      margin-top: 20px;
+}
+.mouth{
+    background: #000;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(100% 74%, 44% 48%, 100% 21%);
+    animation-name: eat;
+    animation-duration: 0.7s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  .eye{
+      position: absolute;
+      top: 30px;
+      left: 70px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: rgb(255, 255, 255);
+
+  }
+  .food{
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: rgb(248, 248, 248);
+    border-radius: 50%;
+    top: 50%;
+    left: 62%;
+    animation-name: food;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    
+
+    
+  }
+
+@keyframes eat {
+    0% {
+      clip-path: polygon(100% 74%, 44% 48%, 100% 21%);
+    }
+    25% {
+      clip-path: polygon(100% 60%, 44% 48%, 100% 40%);
+    }
+    
+    50% {
+      clip-path: polygon(100% 50%, 44% 48%, 100% 50%);
+    }
+    
+    75% {
+     clip-path: polygon(100% 59%, 44% 48%, 100% 35%);
+    }
+    
+    100% {
+     clip-path: polygon(100% 74%, 44% 48%, 100% 21%);
+    }
+  }
+
+  @keyframes food{
+    0%{
+      transform: translatex(0);
+      opacity: 1;
+    }
+    100%{
+      transform: translatex(-150px);
+      opacity: 0;
+    }
+  }
